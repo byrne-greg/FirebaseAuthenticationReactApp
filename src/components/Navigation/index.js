@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import * as ROUTES from "../../constants/routes";
-import SignOut from "../pages/SignOut";
+import SignOut from "../SignOut";
 
 const Navigation = () => (
   <div>
