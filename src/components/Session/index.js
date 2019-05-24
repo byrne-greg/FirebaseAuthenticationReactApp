@@ -1,3 +1,5 @@
-import Session from "./Session";
+import AuthUserContext from "./context";
+import withAuthentication from "./withAuthentication";
+import withAuthorization from "./withAuthorization";
 
-export default Session;
+export { AuthUserContext, withAuthentication, withAuthorization };

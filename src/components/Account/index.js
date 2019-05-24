@@ -1,3 +1,3 @@
-import Account from "./Account";
+import AccountPage from "./Account";
 
-export default Account;
+export default AccountPage;

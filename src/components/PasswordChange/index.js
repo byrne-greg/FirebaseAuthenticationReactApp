@@ -1,3 +1,3 @@
-import PasswordChange from "./PasswordChange";
+import PasswordChangeForm from "./PasswordChange";
 
-export default PasswordChange;
+export default PasswordChangeForm;

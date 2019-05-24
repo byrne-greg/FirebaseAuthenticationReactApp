@@ -1,3 +1,7 @@
-import PasswordForget from "./PasswordForget";
+import PasswordForgetPage, {
+  PasswordForgetForm,
+  PasswordForgetLink
+} from "./PasswordForget";
 
-export default PasswordForget;
+export default PasswordForgetPage;
+export { PasswordForgetForm, PasswordForgetLink };
