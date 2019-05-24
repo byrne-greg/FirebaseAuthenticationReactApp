@@ -1,5 +1,9 @@
 {
   "name": "stool-diary",
+  "homepage": "https://stool-diary.web.app/",
+  "author": "Greg Byrne - https://www.linkedin.com/in/byrne-greg/",
+  "repository": "https://github.com/byrne-greg/StoolDiary",
+  "license": "LGPLv3",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
