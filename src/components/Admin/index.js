@@ -1,3 +1,3 @@
-import Admin from "./Admin";
+import AdminPage from "./Admin";
 
-export default Admin;
+export default AdminPage;
