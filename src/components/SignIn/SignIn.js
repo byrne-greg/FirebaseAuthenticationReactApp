@@ -1,12 +1,12 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
 
 import { SignUpLink } from "../SignUp";
+import { PasswordForgetLink } from "../PasswordForget";
 import { withFirebase } from "../Firebase";
 import * as ROUTES from "../../constants/routes";
-import { PasswordForgetLink } from "../PasswordForget";
 
-const SignInPage = () => (
+const SignIn = () => (
   <div>
     <h1>SignIn</h1>
     <SignInForm />
@@ -15,72 +15,98 @@ const SignInPage = () => (
   </div>
 );
 
-const INITIAL_STATE = {
-  email: "",
-  password: "",
-  error: null
-};
+const ErrorAlert = ({ errorText }) => (
+  <div id="submit-error">
+    <p>{errorText}</p>
+  </div>
+);
 
-class SignInFormBase extends Component {
-  constructor(props) {
-    super(props);
+const SubmitButton = ({ isInvalid }) => (
+  <button id="submit-button" disabled={isInvalid} type="submit">
+    Sign In
+  </button>
+);
 
-    this.state = { ...INITIAL_STATE };
-  }
+const InputField = ({
+  htmlId,
+  className,
+  name,
+  value,
+  onChange,
+  placeholder
+}) => (
+  <input
+    id={htmlId}
+    className={className}
+    name={name}
+    value={value}
+    onChange={onChange}
+    type="text"
+    placeholder={placeholder}
+  />
+);
 
-  onSubmit = event => {
-    const { email, password } = this.state;
+const EmailInputField = ({ currentValue, onChange }) => (
+  <InputField
+    htmlId="email-input-field"
+    name="email"
+    value={currentValue}
+    onChange={onChange}
+    placeholder="Email Address"
+  />
+);
 
-    this.props.firebase
+const PasswordInputField = ({ currentValue, onChange }) => (
+  <InputField
+    htmlId="password-input-field"
+    name="password"
+    value={currentValue}
+    onChange={onChange}
+    placeholder="Password"
+  />
+);
+
+const SignInFormComponent = ({ firebase, history }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
+
+  const onSubmit = event => {
+    firebase
       .doSignInWithEmailAndPassword(email, password)
       .then(() => {
-        this.setState({ ...INITIAL_STATE });
-        this.props.history.push(ROUTES.HOME);
+        setEmail("");
+        setPassword("");
+        history.push(ROUTES.HOME);
       })
       .catch(error => {
-        this.setState({ error });
+        setError({ ...error });
       });
 
     event.preventDefault();
   };
 
-  onChange = event => {
-    this.setState({ [event.target.name]: event.target.value });
+  const handleChange = ({ event, setState }) => {
+    setState(event.target.value);
+    setError(null);
+  };
+  const onEmailChange = event => {
+    handleChange({ event, setState: setEmail });
+  };
+  const onPasswordChange = event => {
+    handleChange({ event, setState: setPassword });
   };
 
-  render() {
-    const { email, password, error } = this.state;
+  return (
+    <form onSubmit={onSubmit}>
+      <EmailInputField value={email} onChange={onEmailChange} />
+      <PasswordInputField value={password} onChange={onPasswordChange} />
+      <SubmitButton isInvalid={!password || !email} />
+      {error && <ErrorAlert errorText={error.message} />}
+    </form>
+  );
+};
+const SignInForm = withRouter(withFirebase(SignInFormComponent));
 
-    const isInvalid = password === "" || email === "";
-
-    return (
-      <form onSubmit={this.onSubmit}>
-        <input
-          name="email"
-          value={email}
-          onChange={this.onChange}
-          type="text"
-          placeholder="Email Address"
-        />
-        <input
-          name="password"
-          value={password}
-          onChange={this.onChange}
-          type="password"
-          placeholder="Password"
-        />
-        <button disabled={isInvalid} type="submit">
-          Sign In
-        </button>
-
-        {error && <p>{error.message}</p>}
-      </form>
-    );
-  }
-}
-
-const SignInForm = withRouter(withFirebase(SignInFormBase));
-
-export default SignInPage;
-
+export default SignIn;
 export { SignInForm };
