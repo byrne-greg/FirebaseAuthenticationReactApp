@@ -6,7 +6,7 @@ import * as ROUTES from "../../constants/routes";
 const SignOut = ({ history }) => {
   useEffect(() => {
     setTimeout(() => history.push(ROUTES.LANDING), 5000);
-  });
+  }, [history]);
   return <h1>You have successfully signed out</h1>;
 };
 
