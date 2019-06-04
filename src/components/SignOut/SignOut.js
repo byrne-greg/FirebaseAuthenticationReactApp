@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import { withRouter } from "react-router-dom";
-import { withFirebase } from "../Firebase";
+import { FirebaseContext } from "../Firebase";
 import * as ROUTES from "../../constants/routes";
 
 const SignOut = ({ history }) => {
@@ -10,19 +10,23 @@ const SignOut = ({ history }) => {
   return <h1>You have successfully signed out</h1>;
 };
 
-const SignOutButtonComponent = ({ firebase, history }) => (
-  <button
-    id="sign-out-button"
-    type="button"
-    onClick={() => {
-      firebase.signOut();
-      history.push(ROUTES.SIGN_OUT);
-    }}
-  >
-    Sign Out
-  </button>
-);
-const SignOutButton = withRouter(withFirebase(SignOutButtonComponent));
+const SignOutButtonComponent = ({ history }) => {
+  const firebase = useContext(FirebaseContext);
+
+  return (
+    <button
+      id="sign-out-button"
+      type="button"
+      onClick={() => {
+        firebase.signOut();
+        history.push(ROUTES.SIGN_OUT);
+      }}
+    >
+      Sign Out
+    </button>
+  );
+};
+const SignOutButton = withRouter(SignOutButtonComponent);
 
 export default withRouter(SignOut);
 export { SignOutButton };
