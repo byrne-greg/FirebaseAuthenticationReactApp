@@ -15,7 +15,7 @@ const SignOutButtonComponent = ({ firebase, history }) => (
     id="sign-out-button"
     type="button"
     onClick={() => {
-      firebase.doSignOut();
+      firebase.signOut();
       history.push(ROUTES.SIGN_OUT);
     }}
   >

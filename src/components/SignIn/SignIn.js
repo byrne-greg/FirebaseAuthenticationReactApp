@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { withRouter } from "react-router-dom";
 
 import { SignUpLink } from "../SignUp";
 import { PasswordForgetLink } from "../PasswordForget";
-import { withFirebase } from "../Firebase";
+import { FirebaseContext } from "../Firebase";
 import * as ROUTES from "../../constants/routes";
 
 const SignIn = () => (
@@ -66,14 +66,15 @@ const PasswordInputField = ({ currentValue, onChange }) => (
   />
 );
 
-const SignInFormComponent = ({ firebase, history }) => {
+const SignInFormComponent = ({ history }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const firebase = useContext(FirebaseContext);
 
   const onSubmit = event => {
     firebase
-      .doSignInWithEmailAndPassword(email, password)
+      .login(email, password)
       .then(() => {
         setEmail("");
         setPassword("");
@@ -106,7 +107,7 @@ const SignInFormComponent = ({ firebase, history }) => {
     </form>
   );
 };
-const SignInForm = withRouter(withFirebase(SignInFormComponent));
+const SignInForm = withRouter(SignInFormComponent);
 
 export default SignIn;
 export { SignInForm };

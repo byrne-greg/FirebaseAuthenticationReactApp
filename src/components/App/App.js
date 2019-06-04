@@ -9,11 +9,17 @@ import PasswordForget from "../PasswordForget";
 import Home from "../Home";
 import Account from "../Account";
 import Admin from "../Admin";
-
+import { FirebaseContextProvider } from "../Firebase";
 import * as ROUTES from "../../constants/routes";
 import { withAuthentication } from "../Session";
 
 const App = () => (
+  <FirebaseContextProvider>
+    <MainWithAuth />
+  </FirebaseContextProvider>
+);
+
+const Main = () => (
   <>
     <h1>Work in Progress</h1>
     <Router>
@@ -32,5 +38,6 @@ const App = () => (
     </Router>
   </>
 );
+const MainWithAuth = withAuthentication(Main);
 
-export default withAuthentication(App);
+export default App;
