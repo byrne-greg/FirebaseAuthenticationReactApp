@@ -28,6 +28,7 @@ const SubmitButton = ({ isInvalid }) => (
 );
 
 const InputField = ({
+  labelText,
   htmlId,
   className,
   name,
@@ -35,15 +36,19 @@ const InputField = ({
   onChange,
   placeholder
 }) => (
-  <input
-    id={htmlId}
-    className={className}
-    name={name}
-    value={value}
-    onChange={onChange}
-    type="text"
-    placeholder={placeholder}
-  />
+  <>
+    <label id={`${name}-label`}>{labelText}</label>
+    <input
+      aria-labelledby={`${name}-label`}
+      id={htmlId}
+      className={className}
+      name={name}
+      value={value}
+      onChange={onChange}
+      type="text"
+      placeholder={placeholder}
+    />
+  </>
 );
 
 const EmailInputField = ({ currentValue, onChange }) => (
@@ -53,6 +58,7 @@ const EmailInputField = ({ currentValue, onChange }) => (
     value={currentValue}
     onChange={onChange}
     placeholder="Email Address"
+    labelText="Email Address"
   />
 );
 
@@ -63,6 +69,7 @@ const PasswordInputField = ({ currentValue, onChange }) => (
     value={currentValue}
     onChange={onChange}
     placeholder="Password"
+    labelText="Password"
   />
 );
 
