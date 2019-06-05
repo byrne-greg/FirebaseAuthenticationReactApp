@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignIn render tests page renders as expected 1`] = `
+<div>
+  <h1>
+    SignIn
+  </h1>
+  <form
+    onSubmit={[Function]}
+  >
+    Array [
+      <label
+        id="email-label"
+      >
+        Email Address
+      </label>,
+      <input
+        aria-labelledby="email-label"
+        id="email-input-field"
+        name="email"
+        onChange={[Function]}
+        placeholder="Email Address"
+        type="text"
+      />,
+    ]
+    Array [
+      <label
+        id="password-label"
+      >
+        Password
+      </label>,
+      <input
+        aria-labelledby="password-label"
+        id="password-input-field"
+        name="password"
+        onChange={[Function]}
+        placeholder="Password"
+        type="text"
+      />,
+    ]
+    <button
+      disabled={true}
+      id="submit-button"
+      type="submit"
+    >
+      Sign In
+    </button>
+  </form>
+  <p>
+    <a
+      href="/pw-forget"
+      onClick={[Function]}
+    >
+      Forgot Password?
+    </a>
+  </p>
+  <p>
+    Don't have an account? 
+    <a
+      href="/signup"
+      onClick={[Function]}
+    >
+      Sign Up
+    </a>
+  </p>
+</div>
+`;
