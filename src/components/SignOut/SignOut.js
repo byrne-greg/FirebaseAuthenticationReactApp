@@ -18,7 +18,7 @@ const SignOutButtonComponent = ({ history }) => {
       id="sign-out-button"
       type="button"
       onClick={() => {
-        firebase.signOut();
+        firebase.logout();
         history.push(ROUTES.SIGN_OUT);
       }}
     >
