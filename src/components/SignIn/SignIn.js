@@ -5,10 +5,11 @@ import { SignUpLink } from "../SignUp";
 import { PasswordForgetLink } from "../PasswordForget";
 import { FirebaseContext } from "../Firebase";
 import * as ROUTES from "../../constants/routes";
+import messages from "./messages";
 
 const SignIn = () => (
   <div>
-    <h1>SignIn</h1>
+    <h1>{messages.signIn}</h1>
     <SignInForm />
     <PasswordForgetLink />
     <SignUpLink />
@@ -23,7 +24,7 @@ const ErrorAlert = ({ errorText }) => (
 
 const SubmitButton = ({ isInvalid }) => (
   <button id="submit-button" disabled={isInvalid} type="submit">
-    Sign In
+    {messages.signIn}
   </button>
 );
 
@@ -53,23 +54,23 @@ const InputField = ({
 
 const EmailInputField = ({ currentValue, onChange }) => (
   <InputField
-    htmlId="email-input-field"
-    name="email"
+    htmlId={`${messages.email}-input-field`}
+    name={messages.email}
     value={currentValue}
     onChange={onChange}
-    placeholder="Email Address"
-    labelText="Email Address"
+    placeholder={messages.emailAddressLabel}
+    labelText={messages.emailAddressLabel}
   />
 );
 
 const PasswordInputField = ({ currentValue, onChange }) => (
   <InputField
-    htmlId="password-input-field"
-    name="password"
+    htmlId={`${messages.password}-input-field`}
+    name={messages.password}
     value={currentValue}
     onChange={onChange}
-    placeholder="Password"
-    labelText="Password"
+    placeholder={messages.passwordLabel}
+    labelText={messages.passwordLabel}
   />
 );
 

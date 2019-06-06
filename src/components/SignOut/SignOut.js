@@ -2,12 +2,13 @@ import React, { useEffect, useContext } from "react";
 import { withRouter } from "react-router-dom";
 import { FirebaseContext } from "../Firebase";
 import * as ROUTES from "../../constants/routes";
+import messages from "./messages";
 
 const SignOut = ({ history }) => {
   useEffect(() => {
     setTimeout(() => history.push(ROUTES.LANDING), 5000);
   }, [history]);
-  return <h1>You have successfully signed out</h1>;
+  return <h1>{messages.successfulSignOut}</h1>;
 };
 
 const SignOutButtonComponent = ({ history }) => {
@@ -22,7 +23,7 @@ const SignOutButtonComponent = ({ history }) => {
         history.push(ROUTES.SIGN_OUT);
       }}
     >
-      Sign Out
+      {messages.signOut}
     </button>
   );
 };

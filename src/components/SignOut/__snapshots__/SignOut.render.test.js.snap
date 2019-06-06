@@ -3,11 +3,6 @@
 exports[`SignOut render tests button renders as expected 1`] = `
 <body>
   <div>
-    <h1>
-      You have successfully signed out
-    </h1>
-  </div>
-  <div>
     <button
       id="sign-out-button"
       type="button"

@@ -1,7 +1,10 @@
 import React from "react";
-import { render, fireEvent } from "@testing-library/react";
+import { render, fireEvent, cleanup } from "@testing-library/react";
 import { withTestRouter, withMockFirebase } from "../../TestUtil";
 import SignIn, { SignInForm } from ".";
+import messages from "./messages";
+
+afterEach(cleanup);
 
 describe("SignIn render tests", () => {
   it("page renders as expected", () => {
@@ -24,11 +27,11 @@ describe("SignIn render tests", () => {
     const { form, getByLabelText, getByText } = render(
       withTestRouter(withMockFirebase(firebase, <SignInForm />))
     );
-    const emailInput = getByLabelText("Email Address");
-    fireEvent.change(emailInput, { target: { value: "email" } });
-    const passwordInput = getByLabelText("Password");
-    fireEvent.change(passwordInput, { target: { value: "password" } });
-    const submitButton = getByText("Sign In");
+    const emailInput = getByLabelText(messages.emailAddressLabel);
+    fireEvent.change(emailInput, { target: { value: messages.email } });
+    const passwordInput = getByLabelText(messages.passwordLabel);
+    fireEvent.change(passwordInput, { target: { value: messages.password } });
+    const submitButton = getByText(messages.signIn);
     fireEvent.click(submitButton);
 
     // THEN

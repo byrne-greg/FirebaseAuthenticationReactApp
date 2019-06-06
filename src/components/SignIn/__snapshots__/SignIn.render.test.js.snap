@@ -5,7 +5,7 @@ exports[`SignIn render tests page renders as expected 1`] = `
   <div>
     <div>
       <h1>
-        SignIn
+        Sign In
       </h1>
       <form>
         <label

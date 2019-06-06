@@ -1,7 +1,9 @@
 import React from "react";
 import { withTestRouter } from "../../TestUtil";
-import { render } from "@testing-library/react";
+import { render, cleanup } from "@testing-library/react";
 import SignOut, { SignOutButton } from ".";
+
+afterEach(cleanup);
 
 describe("SignOut render tests", () => {
   it("page renders as expected", () => {
