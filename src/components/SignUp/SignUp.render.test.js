@@ -26,24 +26,5 @@ describe("SignUp render tests", () => {
     expect(link.baseElement).toMatchSnapshot();
   });
 
-  xit("form renders with error", () => {
-    // GIVEN
-    const firebase = {
-      login: () => Promise.resolve()
-    };
-
-    // WHEN
-    const { form, getByLabelText, getByText } = render(
-      withTestRouter(withMockFirebase(firebase, <SignInForm />))
-    );
-    const emailInput = getByLabelText("Email Address");
-    fireEvent.change(emailInput, { target: { value: "email" } });
-    const passwordInput = getByLabelText("Password");
-    fireEvent.change(passwordInput, { target: { value: "password" } });
-    const submitButton = getByText("Sign In");
-    fireEvent.click(submitButton);
-
-    // THEN
-    expect(form.baseElement).toMatchSnapshot();
-  });
+  xit("form renders with error", () => {});
 });

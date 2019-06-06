@@ -30,6 +30,7 @@ exports[`SignUp render tests page renders as expected 1`] = `
         </label>
         <input
           aria-labelledby="username-label"
+          id="username-input"
           name="username"
           placeholder="User Name"
           type="text"
@@ -42,12 +43,12 @@ exports[`SignUp render tests page renders as expected 1`] = `
         </label>
         <input
           aria-labelledby="email-label"
+          id="email-input"
           name="email"
           placeholder="Email Address"
           type="text"
           value=""
         />
-         
         <label
           id="password-label"
         >
@@ -55,7 +56,8 @@ exports[`SignUp render tests page renders as expected 1`] = `
         </label>
         <input
           aria-labelledby="password-label"
-          name="passwordOne"
+          id="password-input"
+          name="password"
           placeholder="Password"
           type="password"
           value=""
@@ -67,13 +69,15 @@ exports[`SignUp render tests page renders as expected 1`] = `
         </label>
         <input
           aria-labelledby="confirm-password-label"
-          name="passwordTwo"
+          id="confirm-password-input"
+          name="confirm-password"
           placeholder="Confirm Password"
           type="password"
           value=""
         />
         <button
           disabled=""
+          id="submit-button"
           type="submit"
         >
           Sign Up

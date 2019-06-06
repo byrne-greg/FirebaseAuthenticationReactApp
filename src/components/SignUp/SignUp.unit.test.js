@@ -228,26 +228,27 @@ describe("SignUp unit tests", () => {
     expect(submitButton.disabled).toBe(false);
   });
 
-  xtest("when form submit button is clicked, it calls firebase login", () => {
+  test("when form submit button is clicked, it calls firebase login", () => {
     const firebase = {
-      login: jest.fn(() =>
-        Promise.resolve({
-          then: () => {}
-        })
-      )
+      createUser: jest.fn(Promise.resolve())
     };
 
     const { getByLabelText, getByText } = render(
-      withTestRouter(withMockFirebase(firebase, <SignInForm />))
+      withTestRouter(withMockFirebase(firebase, <SignUpForm />))
     );
-    const emailInput = getByLabelText("Email Address");
+    const emailInput = getByLabelText(text.emailAddress);
     fireEvent.change(emailInput, { target: { value: "email" } });
-    const passwordInput = getByLabelText("Password");
+    const usernameInput = getByLabelText(text.username);
+    fireEvent.change(usernameInput, { target: { value: "username" } });
+    const passwordInput = getByLabelText(text.password);
     fireEvent.change(passwordInput, { target: { value: "password" } });
-    const submitButton = getByText("Sign In");
+    const confirmPasswordInput = getByLabelText(text.confirmPassword);
+    fireEvent.change(confirmPasswordInput, { target: { value: "password" } });
+
+    const submitButton = getByText(text.signUp);
     fireEvent.click(submitButton);
 
-    expect(firebase.login).toHaveBeenCalledWith("email", "password");
+    expect(firebase.createUser).toHaveBeenCalledWith("email", "password");
   });
 
   xtest("when login was successful, the user is navigated to the home page", () => {});

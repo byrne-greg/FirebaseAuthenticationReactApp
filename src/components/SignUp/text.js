@@ -3,5 +3,6 @@ export default {
   username: "User Name",
   emailAddress: "Email Address",
   password: "Password",
-  confirmPassword: "Confirm Password"
+  confirmPassword: "Confirm Password",
+  dontHaveAccount: "Don't have an account?"
 };
