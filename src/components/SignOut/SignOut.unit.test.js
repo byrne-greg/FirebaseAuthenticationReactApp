@@ -2,7 +2,7 @@ import React from "react";
 import { render, fireEvent, cleanup } from "@testing-library/react";
 import { withTestRouter, withMockFirebase } from "../../TestUtil";
 import { SignOutButton } from ".";
-import messages from "./messages";
+import text from "./text";
 
 afterEach(cleanup);
 
@@ -22,7 +22,7 @@ describe("SignOut unit tests", () => {
       withTestRouter(withMockFirebase(firebase, <SignOutButton />))
     );
 
-    const signOutButton = getByText(messages.signOut);
+    const signOutButton = getByText(text.signOut);
     fireEvent.click(signOutButton);
 
     expect(firebase.logout).toHaveBeenCalled();

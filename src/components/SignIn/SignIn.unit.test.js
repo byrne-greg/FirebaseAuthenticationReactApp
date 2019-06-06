@@ -2,13 +2,14 @@ import React from "react";
 import { render, fireEvent, cleanup } from "@testing-library/react";
 import { SignInForm } from ".";
 import { withTestRouter, withMockFirebase } from "../../TestUtil";
+import text from "./text";
 
 afterEach(cleanup);
 
 describe("SignIn unit tests", () => {
   test("when email and password inputs don't have text, the submit button is disabled", () => {
     const { getByText } = render(withTestRouter(<SignInForm />));
-    const submitButton = getByText("Sign In");
+    const submitButton = getByText(text.signIn);
     expect(submitButton.disabled).toBe(true);
   });
 
@@ -17,10 +18,10 @@ describe("SignIn unit tests", () => {
       withTestRouter(<SignInForm />)
     );
 
-    const passwordInput = getByLabelText("Password");
+    const passwordInput = getByLabelText(text.password);
     fireEvent.change(passwordInput, { target: { value: "a" } });
 
-    const submitButton = getByText("Sign In");
+    const submitButton = getByText(text.signIn);
     expect(submitButton.disabled).toBe(true);
   });
 
@@ -29,10 +30,10 @@ describe("SignIn unit tests", () => {
       withTestRouter(<SignInForm />)
     );
 
-    const passwordInput = getByLabelText("Password");
+    const passwordInput = getByLabelText(text.password);
     fireEvent.change(passwordInput, { target: { value: "a" } });
 
-    const submitButton = getByText("Sign In");
+    const submitButton = getByText(text.signIn);
     expect(submitButton.disabled).toBe(true);
   });
 
@@ -40,12 +41,12 @@ describe("SignIn unit tests", () => {
     const { getByLabelText, getByText } = render(
       withTestRouter(<SignInForm />)
     );
-    const emailInput = getByLabelText("Email Address");
+    const emailInput = getByLabelText(text.emailAddress);
     fireEvent.change(emailInput, { target: { value: "email" } });
-    const passwordInput = getByLabelText("Password");
+    const passwordInput = getByLabelText(text.password);
     fireEvent.change(passwordInput, { target: { value: "password" } });
 
-    const submitButton = getByText("Sign In");
+    const submitButton = getByText(text.signIn);
     expect(submitButton.disabled).toBe(false);
   });
 
@@ -57,18 +58,23 @@ describe("SignIn unit tests", () => {
         })
       )
     };
+    const emailInputText = "email";
+    const passwordInputText = "password";
 
     const { getByLabelText, getByText } = render(
       withTestRouter(withMockFirebase(firebase, <SignInForm />))
     );
-    const emailInput = getByLabelText("Email Address");
-    fireEvent.change(emailInput, { target: { value: "email" } });
-    const passwordInput = getByLabelText("Password");
-    fireEvent.change(passwordInput, { target: { value: "password" } });
-    const submitButton = getByText("Sign In");
+    const emailInput = getByLabelText(text.emailAddress);
+    fireEvent.change(emailInput, { target: { value: emailInputText } });
+    const passwordInput = getByLabelText(text.password);
+    fireEvent.change(passwordInput, { target: { value: passwordInputText } });
+    const submitButton = getByText(text.signIn);
     fireEvent.click(submitButton);
 
-    expect(firebase.login).toHaveBeenCalledWith("email", "password");
+    expect(firebase.login).toHaveBeenCalledWith(
+      emailInputText,
+      passwordInputText
+    );
   });
 
   xtest("when login was successful, the user is navigated to the home page", () => {});
