@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignUp render tests link renders as expected 1`] = `
+<body>
+  <div>
+    <p>
+      Don't have an account? 
+      <a
+        href="/signup"
+      >
+        Sign Up
+      </a>
+    </p>
+  </div>
+</body>
+`;
+
+exports[`SignUp render tests page renders as expected 1`] = `
+<body>
+  <div>
+    <div>
+      <h1>
+        Sign Up
+      </h1>
+      <form>
+        <label
+          id="username-label"
+        >
+          User Name
+        </label>
+        <input
+          aria-labelledby="username-label"
+          name="username"
+          placeholder="User Name"
+          type="text"
+          value=""
+        />
+        <label
+          id="email-label"
+        >
+          Email Address
+        </label>
+        <input
+          aria-labelledby="email-label"
+          name="email"
+          placeholder="Email Address"
+          type="text"
+          value=""
+        />
+         
+        <label
+          id="password-label"
+        >
+          Password
+        </label>
+        <input
+          aria-labelledby="password-label"
+          name="passwordOne"
+          placeholder="Password"
+          type="password"
+          value=""
+        />
+        <label
+          id="confirm-password-label"
+        >
+          Confirm Password
+        </label>
+        <input
+          aria-labelledby="confirm-password-label"
+          name="passwordTwo"
+          placeholder="Confirm Password"
+          type="password"
+          value=""
+        />
+        <button
+          disabled=""
+          type="submit"
+        >
+          Sign Up
+        </button>
+      </form>
+    </div>
+  </div>
+</body>
+`;

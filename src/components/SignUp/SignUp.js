@@ -3,10 +3,11 @@ import { Link, withRouter } from "react-router-dom";
 
 import { withFirebase } from "../Firebase";
 import * as ROUTES from "../../constants/routes";
+import text from "./text";
 
 const SignUpPage = () => (
   <div>
-    <h1>SignUp</h1>
+    <h1>{text.signUp}</h1>
     <SignUpForm />
   </div>
 );
@@ -65,38 +66,45 @@ class SignUpFormBase extends Component {
 
     return (
       <form onSubmit={this.onSubmit}>
+        <label id={`username-label`}>{text.username}</label>
         <input
+          aria-labelledby={`username-label`}
           name="username"
           value={username}
           onChange={this.onChange}
           type="text"
-          placeholder="User Name"
+          placeholder={text.username}
         />
+        <label id={`email-label`}>{text.emailAddress}</label>
         <input
+          aria-labelledby={`email-label`}
           name="email"
           value={email}
           onChange={this.onChange}
           type="text"
-          placeholder="Email Address"
-        />
+          placeholder={text.emailAddress}
+        />{" "}
+        <label id={`password-label`}>{text.password}</label>
         <input
+          aria-labelledby={`password-label`}
           name="passwordOne"
           value={passwordOne}
           onChange={this.onChange}
           type="password"
-          placeholder="Password"
+          placeholder={text.password}
         />
+        <label id={`confirm-password-label`}>{text.confirmPassword}</label>
         <input
+          aria-labelledby={`confirm-password-label`}
           name="passwordTwo"
           value={passwordTwo}
           onChange={this.onChange}
           type="password"
-          placeholder="Confirm Password"
+          placeholder={text.confirmPassword}
         />
         <button disabled={isInvalid} type="submit">
-          Sign Up
+          {text.signUp}
         </button>
-
         {error && <p>{error.message}</p>}
       </form>
     );
