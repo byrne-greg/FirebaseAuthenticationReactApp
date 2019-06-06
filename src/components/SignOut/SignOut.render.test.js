@@ -1,6 +1,6 @@
 import React from "react";
-import { mount } from "enzyme";
 import { withTestRouter } from "../../TestUtil";
+import { render } from "@testing-library/react";
 import SignOut, { SignOutButton } from ".";
 
 describe("SignOut render tests", () => {
@@ -8,19 +8,19 @@ describe("SignOut render tests", () => {
     // GIVEN
 
     // WHEN
-    const page = mount(withTestRouter(<SignOut />));
+    const page = render(withTestRouter(<SignOut />));
 
     // THEN
-    expect(page).toMatchSnapshot();
+    expect(page.baseElement).toMatchSnapshot();
   });
 
   it("button renders as expected", () => {
     // GIVEN
 
     // WHEN
-    const button = mount(withTestRouter(<SignOutButton />));
+    const button = render(withTestRouter(<SignOutButton />));
 
     // THEN
-    expect(button).toMatchSnapshot();
+    expect(button.baseElement).toMatchSnapshot();
   });
 });

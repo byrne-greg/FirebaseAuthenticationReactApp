@@ -1,30 +1,37 @@
 import React from "react";
-import { shallow, mount } from "enzyme";
-import { withTestRouter, withMockFirebase, mockFirebase } from "../../TestUtil";
+import { render, fireEvent } from "@testing-library/react";
+import { withTestRouter, withMockFirebase } from "../../TestUtil";
 import SignIn, { SignInForm } from ".";
-
-const setState = jest.fn();
-const useStateSpy = jest.spyOn(React, "useState");
-useStateSpy.mockImplementation(init => [init, setState]);
 
 describe("SignIn render tests", () => {
   it("page renders as expected", () => {
     // GIVEN
 
     // WHEN
-    const page = mount(withTestRouter(<SignIn />));
+    const page = render(withTestRouter(<SignIn />));
 
     // THEN
-    expect(page).toMatchSnapshot();
+    expect(page.baseElement).toMatchSnapshot();
   });
 
   xit("form renders with error", () => {
     // GIVEN
+    const firebase = {
+      login: () => Promise.resolve()
+    };
 
     // WHEN
-    const form = mount(withTestRouter(<SignInForm.WrappedComponent />));
+    const { form, getByLabelText, getByText } = render(
+      withTestRouter(withMockFirebase(firebase, <SignInForm />))
+    );
+    const emailInput = getByLabelText("Email Address");
+    fireEvent.change(emailInput, { target: { value: "email" } });
+    const passwordInput = getByLabelText("Password");
+    fireEvent.change(passwordInput, { target: { value: "password" } });
+    const submitButton = getByText("Sign In");
+    fireEvent.click(submitButton);
 
     // THEN
-    expect(form).toMatchSnapshot();
+    expect(form.baseElement).toMatchSnapshot();
   });
 });
