@@ -8,7 +8,7 @@ import SignOut from "../SignOut";
 import PasswordForget from "../PasswordForget";
 import Home from "../Home";
 import Account from "../Account";
-import Admin from "../Admin";
+// import Admin from "../Admin";
 import { FirebaseContextProvider } from "../Firebase";
 import * as ROUTES from "../../constants/routes";
 import { withAuthentication } from "../Session";
