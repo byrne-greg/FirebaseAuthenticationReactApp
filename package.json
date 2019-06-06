@@ -18,9 +18,12 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "jest": "jest -c src/config/jest.config.js",
+    "coverage": "npm test -- --env=jsdom --coverage",
     "eject": "react-scripts eject",
-    "firebase-init": "firebase logout && firebase login && firebase init",
+    "firebase:init": "npm run firebase:logout && npm run firebase:login && firebase init",
+    "firebase:logout": "firebase logout",
+    "firebase:login": "firebase login",
+    "firebase:login:ci": "firebase login:ci",
     "deploy": "npm run build && firebase deploy"
   },
   "eslintConfig": {
