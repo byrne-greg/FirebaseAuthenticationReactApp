@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - stable
+cache:
+  directories:
+    - node_modules
+script:
+  - npm run build
+  - npm run coverage
+deploy:
+  skip_cleanup: true
+  provider: firebase
+after_script:
+  - COVERALLS_REPO_TOKEN=$COVERALLS_REPO_TOKEN npm run coveralls
+env:
+  global:
+    secure: FFLd+tuGJm0v+mX9f0pDAjR7ajR9yuMQKgvGwSNApIuFMXpAQt4R2/dQfq4K4mBj6rHettAkhOQqrw5FW+g/ef20/r9p7tAfvkw2W07oaxlIvFHUi375ohf+1hPq74yc6pSdfjdxgsju7+rYaEOi6ib4M8jfZNWakHG9cHffTRazydBwa1W5p+lUF68iKl28iVH2teZaGOEN5yu4cwYtldvqfVJniDvyP7h+UuFCMqjozX6qXOM51XZ+XIuoT2++9gfqh8b4Oug0pP9NkCyWiSDrj5gt0vFK5/SRj8qFop553eeXwp5YHK8fxCq7IOIS0RFXSnIe7rvyxCwYusgNcBdLigUgPRsVnsaBzcSLgU7cGAeFHg5yt641QtfNkDq/3ojCIA54XdGz4nyXDXnTb/vABLdKKqesPqxMdeJxzrKXiESwLjuwzqR3SijufUOB2Mw5BfxqELa4Hk5ySzEEE4LWUpZLTKT9SLuq0ayG5o7aZg3EVSmAsxybk1BbB28m2LiuEQrAgI9raGeyiJUJiD6PnQwkBlRhJB/DDLWxMDh23o2nThxX9qKAA7x5fYm+nQyet5+d73DX8JY0YhzbIqm4qFPnJfOFi95vcqIR8XVLJlBro5b+/ntaGF2eOV/ztqE0uRmPoy6Q2km/LiYZFvEVg/EfntMflSMZ7doMfxI=
