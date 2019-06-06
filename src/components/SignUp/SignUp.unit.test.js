@@ -7,7 +7,7 @@ import text from "./text";
 
 afterEach(cleanup);
 
-describe("SignUp unit tests", () => {
+describe("SignUpForm unit tests", () => {
   test("when email, username, password, and confirm password inputs don't have text, the submit button is disabled", () => {
     const { getByText } = render(withTestRouter(<SignUpForm />));
     const submitButton = getByText(text.signUp);
@@ -228,7 +228,7 @@ describe("SignUp unit tests", () => {
     expect(submitButton.disabled).toBe(false);
   });
 
-  test("when form submit button is clicked, it calls firebase login", () => {
+  test("when form submit button is clicked, it calls firebase createUser", () => {
     const firebase = {
       createUser: jest.fn(Promise.resolve())
     };
@@ -252,4 +252,8 @@ describe("SignUp unit tests", () => {
   });
 
   xtest("when login was successful, the user is navigated to the home page", () => {});
+});
+
+describe("SignUpLink unit tests", () => {
+  xtest("when link is clicked, user is navigated to sign up page", () => {});
 });

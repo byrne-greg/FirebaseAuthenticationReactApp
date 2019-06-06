@@ -35,7 +35,7 @@ const EmailInput = ({ email, handleChange }) => (
       name="email"
       value={email}
       onChange={handleChange}
-      type="text"
+      type="email"
       placeholder={text.emailAddress}
     />
   </>
@@ -106,9 +106,10 @@ const SignUpFormComponent = ({ history }) => {
       setEmail("");
       setPassword("");
       setConfirmPassword("");
+      setError(null);
       history.push(ROUTES.HOME);
     } catch (error) {
-      setError(error);
+      setError({ ...error });
     }
 
     event.preventDefault();

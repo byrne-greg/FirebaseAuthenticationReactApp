@@ -28,7 +28,7 @@ const SubmitButton = ({ isInvalid }) => (
   </button>
 );
 
-const EmailInputField = ({ currentValue, onChange }) => (
+const EmailInput = ({ currentValue, onChange }) => (
   <>
     <label id="email-label">{text.emailAddress}</label>
     <input
@@ -37,13 +37,13 @@ const EmailInputField = ({ currentValue, onChange }) => (
       name="email"
       value={currentValue}
       onChange={onChange}
-      type="text"
+      type="email"
       placeholder={text.emailAddress}
     />
   </>
 );
 
-const PasswordInputField = ({ currentValue, onChange }) => (
+const PasswordInput = ({ currentValue, onChange }) => (
   <>
     <label id="password-label">{text.password}</label>
     <input
@@ -90,8 +90,8 @@ const SignInFormComponent = ({ history }) => {
 
   return (
     <form onSubmit={onSubmit}>
-      <EmailInputField value={email} onChange={onEmailChange} />
-      <PasswordInputField value={password} onChange={onPasswordChange} />
+      <EmailInput value={email} onChange={onEmailChange} />
+      <PasswordInput value={password} onChange={onPasswordChange} />
       <SubmitButton isInvalid={!password || !email} />
       {error && <ErrorAlert errorText={error.message} />}
     </form>

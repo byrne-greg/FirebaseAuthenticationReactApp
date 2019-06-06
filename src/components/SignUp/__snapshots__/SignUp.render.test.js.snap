@@ -46,7 +46,7 @@ exports[`SignUp render tests page renders as expected 1`] = `
           id="email-input"
           name="email"
           placeholder="Email Address"
-          type="text"
+          type="email"
           value=""
         />
         <label
