@@ -1,7 +1,8 @@
 import React from "react";
 import { render, fireEvent, cleanup } from "@testing-library/react";
-import { SignInForm } from ".";
 import { withTestRouter, withMockFirebase } from "../../TestUtil";
+import * as ROUTES from "../../constants/routes";
+import { SignInForm } from ".";
 import text from "./text";
 
 afterEach(cleanup);
@@ -52,11 +53,7 @@ describe("SignIn unit tests", () => {
 
   test("when form submit button is clicked, it calls firebase login", () => {
     const firebase = {
-      login: jest.fn(() =>
-        Promise.resolve({
-          then: () => {}
-        })
-      )
+      login: jest.fn(Promise.resolve())
     };
     const emailInputText = "email";
     const passwordInputText = "password";

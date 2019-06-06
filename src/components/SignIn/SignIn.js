@@ -28,50 +28,34 @@ const SubmitButton = ({ isInvalid }) => (
   </button>
 );
 
-const InputField = ({
-  labelText,
-  htmlId,
-  className,
-  name,
-  value,
-  onChange,
-  placeholder
-}) => (
+const EmailInputField = ({ currentValue, onChange }) => (
   <>
-    <label id={`${name}-label`}>{labelText}</label>
+    <label id="email-label">{text.emailAddress}</label>
     <input
-      aria-labelledby={`${name}-label`}
-      id={htmlId}
-      className={className}
-      name={name}
-      value={value}
+      aria-labelledby="email-label"
+      id="email-input"
+      name="email"
+      value={currentValue}
       onChange={onChange}
       type="text"
-      placeholder={placeholder}
+      placeholder={text.emailAddress}
     />
   </>
 );
 
-const EmailInputField = ({ currentValue, onChange }) => (
-  <InputField
-    htmlId="email-input-field"
-    name="email"
-    value={currentValue}
-    onChange={onChange}
-    placeholder={text.emailAddress}
-    labelText={text.emailAddress}
-  />
-);
-
 const PasswordInputField = ({ currentValue, onChange }) => (
-  <InputField
-    htmlId="password-input-field"
-    name="password"
-    value={currentValue}
-    onChange={onChange}
-    placeholder={text.password}
-    labelText={text.password}
-  />
+  <>
+    <label id="password-label">{text.password}</label>
+    <input
+      aria-labelledby="password-label"
+      id="password-input"
+      name="password"
+      value={currentValue}
+      onChange={onChange}
+      type="password"
+      placeholder={text.password}
+    />
+  </>
 );
 
 const SignInFormComponent = ({ history }) => {
@@ -80,17 +64,15 @@ const SignInFormComponent = ({ history }) => {
   const [error, setError] = useState(null);
   const firebase = useContext(FirebaseContext);
 
-  const onSubmit = event => {
-    firebase
-      .login(email, password)
-      .then(() => {
-        setEmail("");
-        setPassword("");
-        history.push(ROUTES.HOME);
-      })
-      .catch(error => {
-        setError({ ...error });
-      });
+  const onSubmit = async event => {
+    try {
+      await firebase.login(email, password);
+      setEmail("");
+      setPassword("");
+      history.push(ROUTES.HOME);
+    } catch (error) {
+      setError({ ...error });
+    }
 
     event.preventDefault();
   };
