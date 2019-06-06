@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import { withFirebase } from "../Firebase";
+import text from "./text";
 
 const INITIAL_STATE = {
   passwordOne: "",
@@ -41,24 +42,24 @@ class PasswordChangeForm extends Component {
 
     return (
       <>
-        <h2>Change your password</h2>
+        <h2>{text.changeYourPassword}</h2>
         <form onSubmit={this.onSubmit}>
           <input
             name="passwordOne"
             value={passwordOne}
             onChange={this.onChange}
             type="password"
-            placeholder="New Password"
+            placeholder={text.newPassword}
           />
           <input
             name="passwordTwo"
             value={passwordTwo}
             onChange={this.onChange}
             type="password"
-            placeholder="Confirm New Password"
+            placeholder={test.confirmNewPassword}
           />
           <button disabled={isInvalid} type="submit">
-            Reset My Password
+            {text.resetMyPassword}
           </button>
 
           {error && <p>{error.message}</p>}
