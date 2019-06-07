@@ -1,8 +1,7 @@
 import React from "react";
-import { render, fireEvent, cleanup } from "@testing-library/react";
-import { withTestRouter, withMockFirebase } from "../../TestUtil";
+import { render, cleanup } from "@testing-library/react";
+import { withTestRouter } from "../../TestUtil";
 import PasswordForget, { PasswordForgetLink } from ".";
-import text from "./text";
 
 afterEach(cleanup);
 
@@ -11,7 +10,7 @@ describe("PasswordForget render tests", () => {
     // GIVEN
 
     // WHEN
-    const page = render(withTestRouter(<PasswordForget />));
+    const page = render(<PasswordForget />);
 
     // THEN
     expect(page.baseElement).toMatchSnapshot();

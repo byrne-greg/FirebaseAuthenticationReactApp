@@ -1,8 +1,8 @@
 import React from "react";
 import { render, fireEvent, cleanup } from "@testing-library/react";
 
-import { withTestRouter, withMockFirebase } from "../../TestUtil";
-import { PasswordForgetForm, PasswordForgetLink } from ".";
+import { withMockFirebase } from "../../TestUtil";
+import { PasswordForgetForm } from ".";
 import text from "./text";
 
 afterEach(cleanup);
