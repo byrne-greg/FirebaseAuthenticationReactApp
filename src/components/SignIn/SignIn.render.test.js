@@ -1,8 +1,7 @@
 import React from "react";
-import { render, fireEvent, cleanup } from "@testing-library/react";
-import { withTestRouter, withMockFirebase } from "../../TestUtil";
-import SignIn, { SignInForm } from ".";
-import text from "./text";
+import { render, cleanup } from "@testing-library/react";
+import { withTestRouter } from "../../TestUtil";
+import SignIn from ".";
 
 afterEach(cleanup);
 

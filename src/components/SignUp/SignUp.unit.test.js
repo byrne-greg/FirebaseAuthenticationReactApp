@@ -210,7 +210,25 @@ describe("SignUpForm unit tests", () => {
     expect(submitButton.disabled).toBe(true);
   });
 
-  test("when all form inputs have text, the submit button is enabled", () => {
+  test("when all form inputs have text and password inputs don't match, the submit button is enabled", () => {
+    const { getByLabelText, getByText } = render(
+      withTestRouter(<SignUpForm />)
+    );
+
+    const emailInput = getByLabelText(text.emailAddress);
+    fireEvent.change(emailInput, { target: { value: "1" } });
+    const usernameInput = getByLabelText(text.username);
+    fireEvent.change(usernameInput, { target: { value: "2" } });
+    const passwordInput = getByLabelText(text.password);
+    fireEvent.change(passwordInput, { target: { value: "3" } });
+    const confirmPasswordInput = getByLabelText(text.confirmPassword);
+    fireEvent.change(confirmPasswordInput, { target: { value: "4" } });
+
+    const submitButton = getByText(text.signUp);
+    expect(submitButton.disabled).toBe(true);
+  });
+
+  test("when all form inputs have text and passwords match, the submit button is enabled", () => {
     const { getByLabelText, getByText } = render(
       withTestRouter(<SignUpForm />)
     );

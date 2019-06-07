@@ -64,6 +64,8 @@ const SignInFormComponent = ({ history }) => {
   const [error, setError] = useState(null);
   const firebase = useContext(FirebaseContext);
 
+  const isInvalid = !password || !email;
+
   const onSubmit = async event => {
     try {
       await firebase.login(email, password);
@@ -92,7 +94,7 @@ const SignInFormComponent = ({ history }) => {
     <form onSubmit={onSubmit}>
       <EmailInput value={email} onChange={onEmailChange} />
       <PasswordInput value={password} onChange={onPasswordChange} />
-      <SubmitButton isInvalid={!password || !email} />
+      <SubmitButton isInvalid={isInvalid} />
       {error && <ErrorAlert errorText={error.message} />}
     </form>
   );
