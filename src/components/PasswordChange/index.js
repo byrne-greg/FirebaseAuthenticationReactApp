@@ -1,3 +1,4 @@
-import PasswordChangeForm from "./PasswordChange";
+import PasswordChangePage, { PasswordChangeForm } from "./PasswordChange";
 
-export default PasswordChangeForm;
+export default PasswordChangePage;
+export { PasswordChangeForm };
