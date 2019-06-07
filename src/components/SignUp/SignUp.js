@@ -127,11 +127,9 @@ const SignUpFormComponent = ({ history }) => {
       case "password":
         setPassword(value);
         break;
-      case "confirm-password":
-        setConfirmPassword(value);
-        break;
       default:
-        return; // do nothing
+        // "confirm-password":
+        setConfirmPassword(value);
     }
   };
 
