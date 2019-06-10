@@ -1,6 +1,5 @@
-import React, { useState, useContext, Component } from "react";
-
-import { withFirebase, FirebaseContext } from "../Firebase";
+import React, { useState, useContext } from "react";
+import { FirebaseContext } from "../Firebase";
 import text from "./text";
 
 const PasswordChangePage = () => (
