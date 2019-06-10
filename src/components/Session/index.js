@@ -1,11 +1,9 @@
-import AuthUserContext from "./context";
-import withAuthentication, { useAuthentication } from "./withAuthentication";
-import withAuthorization, { useAuthorization } from "./withAuthorization";
+import AuthUserContext, { AuthUserContextProvider } from "./context";
+import { useAuthentication, useAuthorization } from "./hooks";
 
 export {
   AuthUserContext,
-  withAuthentication,
+  AuthUserContextProvider,
   useAuthentication,
-  withAuthorization,
   useAuthorization
 };

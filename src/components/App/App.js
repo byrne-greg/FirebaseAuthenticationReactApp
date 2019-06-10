@@ -10,12 +10,14 @@ import Home from "../Home";
 import Account from "../Account";
 // import Admin from "../Admin";
 import { FirebaseContextProvider } from "../Firebase";
+import { AuthUserContextProvider } from "../Session";
 import * as ROUTES from "../../constants/routes";
-import { withAuthentication } from "../Session";
 
 const App = () => (
   <FirebaseContextProvider>
-    <MainWithAuth />
+    <AuthUserContextProvider>
+      <Main />
+    </AuthUserContextProvider>
   </FirebaseContextProvider>
 );
 
@@ -38,6 +40,5 @@ const Main = () => (
     </Router>
   </>
 );
-const MainWithAuth = withAuthentication(Main);
 
 export default App;
