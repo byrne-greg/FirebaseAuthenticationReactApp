@@ -95,6 +95,7 @@ const SignUpFormComponent = ({ history }) => {
     !email || !username || !password || password !== confirmPassword;
 
   const onSubmit = async event => {
+    event.preventDefault();
     try {
       const authUser = await firebase.createUser(email, password);
       // Create a user in your Firebase realtime database
@@ -111,8 +112,6 @@ const SignUpFormComponent = ({ history }) => {
     } catch (error) {
       setError({ ...error });
     }
-
-    event.preventDefault();
   };
 
   const handleChange = event => {

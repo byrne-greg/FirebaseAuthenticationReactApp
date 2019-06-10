@@ -67,6 +67,7 @@ const SignInFormComponent = ({ history }) => {
   const isInvalid = !password || !email;
 
   const onSubmit = async event => {
+    event.preventDefault();
     try {
       await firebase.login(email, password);
       setEmail("");
@@ -75,8 +76,6 @@ const SignInFormComponent = ({ history }) => {
     } catch (error) {
       setError({ ...error });
     }
-
-    event.preventDefault();
   };
 
   const handleChange = ({ event, setState }) => {
