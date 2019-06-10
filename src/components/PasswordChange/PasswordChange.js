@@ -35,7 +35,7 @@ const ConfirmNewPasswordInput = ({
       value={confirmNewPassword}
       onChange={onConfirmNewPasswordChange}
       type="password"
-      placeholder={test.confirmNewPassword}
+      placeholder={text.confirmNewPassword}
     />
   </>
 );
