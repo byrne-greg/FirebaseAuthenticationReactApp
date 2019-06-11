@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation render tests when user is authenticated, the authenticated user navigation bar renders as expected 1`] = `
+<body>
+  <div>
+    <div>
+      <ul>
+        <li>
+          <a
+            href="/"
+          >
+            Landing
+          </a>
+        </li>
+        <li>
+          <a
+            href="/home"
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            href="/account"
+          >
+            Account
+          </a>
+        </li>
+        <li>
+          <button
+            id="sign-out-button"
+            type="button"
+          >
+            Sign Out
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Navigation render tests when user is unauthenticated, the public navigation bar renders as expected 1`] = `
+<body>
+  <div>
+    <div>
+      <ul>
+        <li>
+          <a
+            href="/"
+          >
+            Landing
+          </a>
+        </li>
+        <li>
+          <a
+            href="/signin"
+          >
+            Sign In
+          </a>
+        </li>
+        <li>
+          <a
+            href="/signup"
+          >
+            Sign Up
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+`;

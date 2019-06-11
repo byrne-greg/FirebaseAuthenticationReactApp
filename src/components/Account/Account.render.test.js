@@ -1,27 +1,27 @@
 import React from "react";
 import { render, cleanup } from "@testing-library/react";
 import { withTestRouter, withMockAuthUserContext } from "../../TestUtil";
-import Home from ".";
+import Account from ".";
 
 afterEach(cleanup);
 
-describe("Home render tests", () => {
-  it("when user is unauthenticated, the unauthorized page is rendered", () => {
+describe("Navigation render tests", () => {
+  it("when user is unauthenticated, the public navigation bar renders as expected", () => {
     // GIVEN
 
     // WHEN
-    const page = render(withTestRouter(<Home />));
+    const page = render(withTestRouter(<Account />));
 
     // THEN
     expect(page.baseElement).toMatchSnapshot();
   });
 
-  it("when user is authenticated, the home page renders as expected", () => {
+  it("when user is authenticated, the authenticated account page renders as expected", () => {
     // GIVEN
 
     // WHEN
     const page = render(
-      withTestRouter(withMockAuthUserContext({ mockUser: true }, <Home />))
+      withTestRouter(withMockAuthUserContext({ mockUser: true }, <Account />))
     );
 
     // THEN

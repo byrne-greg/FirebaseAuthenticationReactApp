@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation render tests when user is authenticated, the authenticated account page renders as expected 1`] = `
+<body>
+  <div>
+    <div>
+      <h1>
+        Account: 
+      </h1>
+      <h2>
+        Forget your password?
+      </h2>
+      <form>
+        <label
+          id="email-label"
+        >
+          Email Address
+        </label>
+        <input
+          aria-labelledby="email-label"
+          id="email-input"
+          name="email"
+          placeholder="Email Address"
+          type="email"
+          value=""
+        />
+        <button
+          disabled=""
+          id="submit-button"
+          type="submit"
+        >
+          Reset My Password
+        </button>
+      </form>
+      <div>
+        <h1>
+          Change Password
+        </h1>
+        <h2>
+          Change your password
+        </h2>
+        <form>
+          <label
+            id="new-password-label"
+          >
+            New Password
+          </label>
+          <input
+            aria-labelledby="new-password-label"
+            name="new-password"
+            placeholder="New Password"
+            type="password"
+            value=""
+          />
+          <label
+            id="confirm-new-password-label"
+          >
+            Confirm New Password
+          </label>
+          <input
+            aria-labelledby="confirm-new-password-label"
+            name="confirm-new-password"
+            placeholder="Confirm New Password"
+            type="password"
+            value=""
+          />
+          <button
+            disabled=""
+            id="submit-button"
+            type="submit"
+          >
+            Change Password
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Navigation render tests when user is unauthenticated, the public navigation bar renders as expected 1`] = `
+<body>
+  <div>
+    <div>
+      <h1>
+        You are not allowed to access this page
+      </h1>
+    </div>
+  </div>
+</body>
+`;
