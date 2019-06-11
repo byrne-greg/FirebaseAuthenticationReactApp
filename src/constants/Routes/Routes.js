@@ -11,5 +11,9 @@ export default {
   PASSWORD_FORGET: {
     url: "/pw-forget",
     title: text.PASSWORD_FORGET
+  },
+  DELETED_USER: {
+    url: "/deleted-user",
+    title: text.DELETED_USER
   }
 };

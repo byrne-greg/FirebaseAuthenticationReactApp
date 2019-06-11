@@ -6,5 +6,6 @@ export default {
   HOME: "Home",
   ACCOUNT: "Account",
   ADMIN: "Admin",
-  PASSWORD_FORGET: "Forget Password"
+  PASSWORD_FORGET: "Forget Password",
+  DELETED_USER: "Account Deleted"
 };

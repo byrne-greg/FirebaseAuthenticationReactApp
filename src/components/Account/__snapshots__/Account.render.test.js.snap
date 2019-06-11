@@ -33,47 +33,65 @@ exports[`Navigation render tests when user is authenticated, the authenticated a
           Reset My Password
         </button>
       </form>
-      <div>
-        <h1>
+      <h2>
+        Change your password
+      </h2>
+      <form>
+        <label
+          id="new-password-label"
+        >
+          New Password
+        </label>
+        <input
+          aria-labelledby="new-password-label"
+          name="new-password"
+          placeholder="New Password"
+          type="password"
+          value=""
+        />
+        <label
+          id="confirm-new-password-label"
+        >
+          Confirm New Password
+        </label>
+        <input
+          aria-labelledby="confirm-new-password-label"
+          name="confirm-new-password"
+          placeholder="Confirm New Password"
+          type="password"
+          value=""
+        />
+        <button
+          disabled=""
+          id="submit-button"
+          type="submit"
+        >
           Change Password
-        </h1>
-        <h2>
-          Change your password
-        </h2>
-        <form>
-          <label
-            id="new-password-label"
-          >
-            New Password
-          </label>
-          <input
-            aria-labelledby="new-password-label"
-            name="new-password"
-            placeholder="New Password"
-            type="password"
-            value=""
-          />
-          <label
-            id="confirm-new-password-label"
-          >
-            Confirm New Password
-          </label>
-          <input
-            aria-labelledby="confirm-new-password-label"
-            name="confirm-new-password"
-            placeholder="Confirm New Password"
-            type="password"
-            value=""
-          />
-          <button
-            disabled=""
-            id="submit-button"
-            type="submit"
-          >
-            Change Password
-          </button>
-        </form>
-      </div>
+        </button>
+      </form>
+      <h2>
+        Delete your account
+      </h2>
+      <form>
+        <label
+          id="confirm-delete-user-label"
+        >
+          Are you sure you want to delete your account?
+        </label>
+        <input
+          aria-labelledby="confirm-delete-user-label"
+          name="confirm-delete"
+          type="checkbox"
+          value="false"
+        />
+        <button
+          disabled=""
+          id="submit-button"
+          type="submit"
+        >
+          Delete account
+        </button>
+      </form>
     </div>
   </div>
 </body>

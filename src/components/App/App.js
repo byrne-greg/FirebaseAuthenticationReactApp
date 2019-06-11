@@ -12,6 +12,7 @@ import Account from "../Account";
 import { FirebaseContextProvider } from "../Firebase";
 import { AuthUserContextProvider } from "../Session";
 import Routes from "../../constants/Routes";
+import { DeleteUserSuccessfulPage } from "../DeleteUser";
 
 const App = () => (
   <FirebaseContextProvider>
@@ -35,6 +36,10 @@ const Main = () => (
         <Route path={Routes.PASSWORD_FORGET.url} component={PasswordForget} />
         <Route path={Routes.HOME.url} component={Home} />
         <Route path={Routes.ACCOUNT.url} component={Account} />
+        <Route
+          path={Routes.DELETED_USER.url}
+          component={DeleteUserSuccessfulPage}
+        />
         {/* <Route path={Routes.ADMIN.url} component={Admin} /> */}
       </div>
     </Router>
