@@ -98,11 +98,13 @@ const SignUpFormComponent = ({ history }) => {
     event.preventDefault();
     try {
       const authUser = await firebase.createUser(email, password);
+
       // Create a user in your Firebase realtime database
       firebase.user(authUser.user.uid).set({
         username,
         email
       });
+
       setUsername("");
       setEmail("");
       setPassword("");
