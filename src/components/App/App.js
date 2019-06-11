@@ -11,7 +11,7 @@ import Account from "../Account";
 // import Admin from "../Admin";
 import { FirebaseContextProvider } from "../Firebase";
 import { AuthUserContextProvider } from "../Session";
-import routes from "../../constants/routes";
+import routes from "../../constants/Routes";
 
 const App = () => (
   <FirebaseContextProvider>

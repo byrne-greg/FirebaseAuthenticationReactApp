@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
-import routes from "../../constants/routes";
+import routes from "../../constants/Routes";
 import { SignOutButton } from "../SignOut";
 import { AuthUserContext } from "../Session";
 

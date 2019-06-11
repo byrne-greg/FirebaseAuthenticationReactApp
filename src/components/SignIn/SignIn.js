@@ -4,7 +4,7 @@ import { withRouter } from "react-router-dom";
 import { SignUpLink } from "../SignUp";
 import { PasswordForgetLink } from "../PasswordForget";
 import { FirebaseContext } from "../Firebase";
-import routes from "../../constants/routes";
+import routes from "../../constants/Routes";
 import text from "./text";
 
 const SignIn = () => (

@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { FirebaseContext } from "../Firebase";
-import routes from "../../constants/routes";
+import routes from "../../constants/Routes";
 import text from "./text";
 
 const SignUpPage = () => (
