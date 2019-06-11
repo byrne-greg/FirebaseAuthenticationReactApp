@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { FirebaseContext } from "../Firebase";
-import routes from "../../constants/Routes";
+import Routes from "../../constants/Routes";
 import text from "./text";
 
 const PasswordForgetPage = () => (
@@ -75,7 +75,7 @@ const PasswordForgetForm = () => {
 
 const PasswordForgetLink = () => (
   <p>
-    <Link to={routes.PASSWORD_FORGET.url}>{text.forgotPassword}</Link>
+    <Link to={Routes.PASSWORD_FORGET.url}>{text.forgotPassword}</Link>
   </p>
 );
 

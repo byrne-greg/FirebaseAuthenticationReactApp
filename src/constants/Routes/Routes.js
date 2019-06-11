@@ -1,4 +1,4 @@
-import text from "./Routes.text.js";
+import text from "./text.js";
 
 export default {
   LANDING: { url: "/", title: text.LANDING },

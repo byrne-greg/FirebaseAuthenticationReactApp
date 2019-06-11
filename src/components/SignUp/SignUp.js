@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { FirebaseContext } from "../Firebase";
-import routes from "../../constants/Routes";
+import Routes from "../../constants/Routes";
 import text from "./text";
 
 const SignUpPage = () => (
@@ -108,7 +108,7 @@ const SignUpFormComponent = ({ history }) => {
       setPassword("");
       setConfirmPassword("");
       setError(null);
-      history.push(routes.HOME.url);
+      history.push(Routes.HOME.url);
     } catch (error) {
       setError({ ...error });
     }
@@ -152,7 +152,7 @@ const SignUpForm = withRouter(SignUpFormComponent);
 const SignUpLink = () => (
   <p>
     {`${text.dontHaveAccount} `}
-    <Link to={routes.SIGN_UP.url}>{text.signUp}</Link>
+    <Link to={Routes.SIGN_UP.url}>{text.signUp}</Link>
   </p>
 );
 

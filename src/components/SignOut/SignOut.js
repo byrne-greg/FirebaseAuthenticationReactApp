@@ -1,12 +1,12 @@
 import React, { useEffect, useContext } from "react";
 import { withRouter } from "react-router-dom";
 import { FirebaseContext } from "../Firebase";
-import routes from "../../constants/Routes";
+import Routes from "../../constants/Routes";
 import text from "./text";
 
 const SignOut = ({ history }) => {
   useEffect(() => {
-    setTimeout(() => history.push(routes.LANDING.url), 5000);
+    setTimeout(() => history.push(Routes.LANDING.url), 5000);
   }, [history]);
   return <h1>{text.successfulSignOut}</h1>;
 };
@@ -20,7 +20,7 @@ const SignOutButtonComponent = ({ history }) => {
       type="button"
       onClick={() => {
         firebase.logout();
-        history.push(routes.SIGN_OUT.url);
+        history.push(Routes.SIGN_OUT.url);
       }}
     >
       {text.signOut}
