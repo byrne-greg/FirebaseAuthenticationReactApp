@@ -4,7 +4,7 @@ import { withRouter } from "react-router-dom";
 import { SignUpLink } from "../SignUp";
 import { PasswordForgetLink } from "../PasswordForget";
 import { FirebaseContext } from "../Firebase";
-import * as ROUTES from "../../constants/routes";
+import routes from "../../constants/routes";
 import text from "./text";
 
 const SignIn = () => (
@@ -72,7 +72,7 @@ const SignInFormComponent = ({ history }) => {
       await firebase.login(email, password);
       setEmail("");
       setPassword("");
-      history.push(ROUTES.HOME);
+      history.push(routes.HOME.url);
     } catch (error) {
       setError({ ...error });
     }

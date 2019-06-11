@@ -1,8 +1,15 @@
-export const LANDING = "/";
-export const SIGN_UP = "/signup";
-export const SIGN_IN = "/signin";
-export const SIGN_OUT = "/signout";
-export const HOME = "/home";
-export const ACCOUNT = "/account";
-export const ADMIN = "/admin";
-export const PASSWORD_FORGET = "/pw-forget";
+import text from "./Routes.text.js";
+
+export default {
+  LANDING: { url: "/", title: text.LANDING },
+  SIGN_UP: { url: "/signup", title: text.SIGN_UP },
+  SIGN_IN: { url: "/signin", title: text.SIGN_IN },
+  SIGN_OUT: { url: "/signout", title: text.SIGN_OUT },
+  HOME: { url: "/home", title: text.HOME },
+  ACCOUNT: { url: "/account", title: text.ACCOUNT },
+  ADMIN: { url: "/admin", title: text.ADMIN },
+  PASSWORD_FORGET: {
+    url: "/pw-forget",
+    title: text.PASSWORD_FORGET
+  }
+};

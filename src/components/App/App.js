@@ -11,7 +11,7 @@ import Account from "../Account";
 // import Admin from "../Admin";
 import { FirebaseContextProvider } from "../Firebase";
 import { AuthUserContextProvider } from "../Session";
-import * as ROUTES from "../../constants/routes";
+import routes from "../../constants/routes";
 
 const App = () => (
   <FirebaseContextProvider>
@@ -28,14 +28,14 @@ const Main = () => (
       <div>
         <Navigation />
         <hr />
-        <Route exact path={ROUTES.LANDING} component={Landing} />
-        <Route path={ROUTES.SIGN_UP} component={SignUp} />
-        <Route path={ROUTES.SIGN_IN} component={SignIn} />
-        <Route path={ROUTES.SIGN_OUT} component={SignOut} />
-        <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForget} />
-        <Route path={ROUTES.HOME} component={Home} />
-        <Route path={ROUTES.ACCOUNT} component={Account} />
-        {/* <Route path={ROUTES.ADMIN} component={Admin} /> */}
+        <Route exact path={routes.LANDING.url} component={Landing} />
+        <Route path={routes.SIGN_UP.url} component={SignUp} />
+        <Route path={routes.SIGN_IN.url} component={SignIn} />
+        <Route path={routes.SIGN_OUT.url} component={SignOut} />
+        <Route path={routes.PASSWORD_FORGET.url} component={PasswordForget} />
+        <Route path={routes.HOME.url} component={Home} />
+        <Route path={routes.ACCOUNT.url} component={Account} />
+        {/* <Route path={routes.ADMIN.url} component={Admin} /> */}
       </div>
     </Router>
   </>

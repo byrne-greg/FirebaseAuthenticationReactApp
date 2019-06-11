@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
-import * as ROUTES from "../../constants/routes";
+import routes from "../../constants/routes";
 import { SignOutButton } from "../SignOut";
 import { AuthUserContext } from "../Session";
 
@@ -14,16 +14,16 @@ const NavigationAuth = () => (
   <div>
     <ul>
       <li>
-        <Link to={ROUTES.LANDING}>Landing</Link>
+        <Link to={routes.LANDING.url}>{routes.LANDING.title}</Link>
       </li>
       <li>
-        <Link to={ROUTES.HOME}>Home</Link>
+        <Link to={routes.HOME.url}>{routes.HOME.title}</Link>
       </li>
       <li>
-        <Link to={ROUTES.ACCOUNT}>Account</Link>
+        <Link to={routes.ACCOUNT.url}>{routes.ACCOUNT.title}</Link>
       </li>
       {/* <li>
-        <Link to={ROUTES.ADMIN}>Admin</Link>
+        <Link to={routes.ADMIN.url}>Admin</Link>
       </li> */}
       <li>
         <SignOutButton />
@@ -36,13 +36,13 @@ const NavigationPublic = () => (
   <div>
     <ul>
       <li>
-        <Link to={ROUTES.LANDING}>Landing</Link>
+        <Link to={routes.LANDING.url}>{routes.LANDING.title}</Link>
       </li>
       <li>
-        <Link to={ROUTES.SIGN_IN}>Sign In</Link>
+        <Link to={routes.SIGN_IN.url}>{routes.SIGN_IN.title}</Link>
       </li>
       <li>
-        <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
+        <Link to={routes.SIGN_UP.url}>{routes.SIGN_UP.title}</Link>
       </li>
     </ul>
   </div>
