@@ -6,6 +6,7 @@ exports[`Navigation render tests when user is authenticated, the authenticated a
     <div>
       <h1>
         Account: 
+        test@test.com
       </h1>
       <h2>
         Forget your password?

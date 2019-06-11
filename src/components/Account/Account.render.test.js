@@ -21,7 +21,9 @@ describe("Navigation render tests", () => {
 
     // WHEN
     const page = render(
-      withTestRouter(withMockAuthUserContext({ mockUser: true }, <Account />))
+      withTestRouter(
+        withMockAuthUserContext({ email: "test@test.com" }, <Account />)
+      )
     );
 
     // THEN
