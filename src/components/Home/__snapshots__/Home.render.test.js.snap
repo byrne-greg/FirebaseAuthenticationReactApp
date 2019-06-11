@@ -26,30 +26,3 @@ exports[`Home render tests when user is unauthenticated, the unauthorized page i
   </div>
 </body>
 `;
-
-exports[`Navigation render tests when user is authenticated, the authenticated user navigation bar renders as expected 1`] = `
-<body>
-  <div>
-    <div>
-      <h1>
-        Home Page
-      </h1>
-      <p>
-        The Home Page is accessible by every signed in user.
-      </p>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`Navigation render tests when user is unauthenticated, the public navigation bar renders as expected 1`] = `
-<body>
-  <div>
-    <div>
-      <h1>
-        You are not allowed to access this page
-      </h1>
-    </div>
-  </div>
-</body>
-`;

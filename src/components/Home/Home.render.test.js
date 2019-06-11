@@ -1,6 +1,6 @@
 import React from "react";
 import { render, cleanup } from "@testing-library/react";
-import { withTestRouter, withMockAuthUserContext } from "../../TestUtil";
+import { withTestRouter, withMockAuthUserContext } from "../../util/TestUtil";
 import Home from ".";
 
 afterEach(cleanup);

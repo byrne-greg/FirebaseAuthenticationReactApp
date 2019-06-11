@@ -1,6 +1,6 @@
 import React from "react";
 import { render, fireEvent, cleanup } from "@testing-library/react";
-import { withTestRouter, withMockFirebase } from "../../TestUtil";
+import { withTestRouter, withMockFirebase } from "../../util/TestUtil";
 import * as ROUTES from "../../constants/routes";
 import { SignInForm } from ".";
 import text from "./text";

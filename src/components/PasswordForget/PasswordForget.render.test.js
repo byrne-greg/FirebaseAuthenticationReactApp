@@ -1,6 +1,6 @@
 import React from "react";
 import { render, cleanup } from "@testing-library/react";
-import { withTestRouter } from "../../TestUtil";
+import { withTestRouter } from "../../util/TestUtil";
 import PasswordForget, { PasswordForgetLink } from ".";
 
 afterEach(cleanup);

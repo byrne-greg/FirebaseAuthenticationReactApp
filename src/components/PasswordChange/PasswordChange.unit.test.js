@@ -1,7 +1,7 @@
 import React from "react";
 import { render, fireEvent, cleanup } from "@testing-library/react";
 
-import { withMockFirebase } from "../../TestUtil";
+import { withMockFirebase } from "../../util/TestUtil";
 import { PasswordChangeForm } from ".";
 import text from "./text";
 

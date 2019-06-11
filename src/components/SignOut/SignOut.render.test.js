@@ -1,5 +1,5 @@
 import React from "react";
-import { withTestRouter } from "../../TestUtil";
+import { withTestRouter } from "../../util/TestUtil";
 import { render, cleanup } from "@testing-library/react";
 import SignOut, { SignOutButton } from ".";
 
