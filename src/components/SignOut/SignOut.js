@@ -1,13 +1,10 @@
-import React, { useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { withRouter } from "react-router-dom";
 import { FirebaseContext } from "../Firebase";
 import Routes from "../../constants/Routes";
 import text from "./text";
 
-const SignOut = ({ history }) => {
-  useEffect(() => {
-    setTimeout(() => history.push(Routes.LANDING.url), 5000);
-  }, [history]);
+const SignOut = () => {
   return <h1>{text.successfulSignOut}</h1>;
 };
 
