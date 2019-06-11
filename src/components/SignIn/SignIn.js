@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
 import { withRouter } from "react-router-dom";
-
 import { SignUpLink } from "../SignUp";
 import { PasswordForgetLink } from "../PasswordForget";
 import { FirebaseContext } from "../Firebase";
