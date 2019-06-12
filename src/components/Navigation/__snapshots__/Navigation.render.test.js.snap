@@ -28,7 +28,6 @@ exports[`Navigation render tests when user is authenticated, the authenticated u
         </li>
         <li>
           <button
-            id="sign-out-button"
             type="button"
           >
             Sign Out

@@ -20,12 +20,26 @@ exports[`DeleteUser render tests delete user form renders as expected 1`] = `
       />
       <button
         disabled=""
-        id="submit-button"
         type="submit"
       >
         Delete account
       </button>
     </form>
+  </div>
+</body>
+`;
+
+exports[`DeleteUser render tests delete user form renders as expected 2`] = `
+<body>
+  <div>
+    <div>
+      <h1>
+        Account deleted
+      </h1>
+      <p>
+        You have successfully deleted your account
+      </p>
+    </div>
   </div>
 </body>
 `;

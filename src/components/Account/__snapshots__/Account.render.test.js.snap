@@ -27,7 +27,6 @@ exports[`Navigation render tests when user is authenticated, the authenticated a
         />
         <button
           disabled=""
-          id="submit-button"
           type="submit"
         >
           Reset My Password
@@ -63,7 +62,6 @@ exports[`Navigation render tests when user is authenticated, the authenticated a
         />
         <button
           disabled=""
-          id="submit-button"
           type="submit"
         >
           Change Password
@@ -86,7 +84,6 @@ exports[`Navigation render tests when user is authenticated, the authenticated a
         />
         <button
           disabled=""
-          id="submit-button"
           type="submit"
         >
           Delete account

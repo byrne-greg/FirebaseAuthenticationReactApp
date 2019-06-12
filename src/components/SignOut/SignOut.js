@@ -13,7 +13,6 @@ const SignOutButtonComponent = ({ history }) => {
 
   return (
     <button
-      id="sign-out-button"
       type="button"
       onClick={() => {
         firebase.logout();

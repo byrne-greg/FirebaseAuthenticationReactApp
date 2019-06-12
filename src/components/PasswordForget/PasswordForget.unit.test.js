@@ -1,6 +1,5 @@
 import React from "react";
 import { render, fireEvent, cleanup } from "@testing-library/react";
-
 import { withMockFirebase } from "../../util/TestUtil";
 import { PasswordForgetForm } from ".";
 import text from "./text";

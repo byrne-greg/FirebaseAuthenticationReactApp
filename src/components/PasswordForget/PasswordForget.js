@@ -27,13 +27,13 @@ const EmailInput = ({ currentValue, onChange }) => (
 );
 
 const ErrorAlert = ({ errorText }) => (
-  <div id="submit-error">
+  <div>
     <p>{errorText}</p>
   </div>
 );
 
 const SubmitButton = ({ isInvalid }) => (
-  <button id="submit-button" disabled={isInvalid} type="submit">
+  <button disabled={isInvalid} type="submit">
     {text.resetMyPassword}
   </button>
 );

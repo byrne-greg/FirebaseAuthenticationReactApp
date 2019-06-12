@@ -36,7 +36,6 @@ exports[`SignIn render tests page renders as expected 1`] = `
         />
         <button
           disabled=""
-          id="submit-button"
           type="submit"
         >
           Sign In

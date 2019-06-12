@@ -41,7 +41,7 @@ const ConfirmNewPasswordInput = ({
 );
 
 const SubmitButton = ({ isInvalid }) => (
-  <button id="submit-button" disabled={isInvalid} type="submit">
+  <button disabled={isInvalid} type="submit">
     {text.changePassword}
   </button>
 );
