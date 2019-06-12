@@ -1,10 +1,10 @@
 {
-  "name": "stool-diary",
-  "homepage": "https://stool-diary.web.app/",
+  "name": "firebase-authentication-react-app",
+  "homepage": "https://firebase.web.app/",
   "author": "Greg Byrne - https://www.linkedin.com/in/byrne-greg/",
-  "repository": "https://github.com/byrne-greg/StoolDiary",
+  "repository": "https://github.com/byrne-greg/FirebaseAuthenticationReactApp",
   "license": "LGPLv3",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "firebase": "^6.0.2",
