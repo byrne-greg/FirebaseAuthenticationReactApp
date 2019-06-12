@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - stable
+cache:
+  directories:
+    - node_modules
+script:
+  - npm run build
+  - npm run coverage
+deploy:
+  skip_cleanup: true
+  provider: firebase
+  on:
+    all_branches: true
+    condition: $TRAVIS_BRANCH =~ ^master|develop$
+after_script:
+  - COVERALLS_REPO_TOKEN=$COVERALLS_REPO_TOKEN npm run coveralls

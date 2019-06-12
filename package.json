@@ -1,0 +1,52 @@
+{
+  "name": "firebase-authentication-react-app",
+  "homepage": "https://firebase.web.app/",
+  "author": "Greg Byrne - https://www.linkedin.com/in/byrne-greg/",
+  "repository": "https://github.com/byrne-greg/FirebaseAuthenticationReactApp",
+  "license": "LGPLv3",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "firebase": "^6.0.2",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "3.0.1"
+  },
+  "scripts": {
+    "install:clean": "rm -rfd node_modules && npm i",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "coverage": "npm test -- --env=jsdom --coverage",
+    "eject": "react-scripts eject",
+    "firebase:init": "npm run firebase:logout && npm run firebase:login && firebase init",
+    "firebase:logout": "firebase logout",
+    "firebase:login": "firebase login",
+    "firebase:login:ci": "firebase login:ci",
+    "deploy": "npm run build && firebase deploy",
+    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "coveralls": "^3.0.4",
+    "@testing-library/react": "^8.0.1",
+    "firebase-tools": "^6.9.2",
+    "react-testing-library": "^8.0.1"
+  }
+}

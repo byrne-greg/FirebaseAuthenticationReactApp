@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignOut render tests button renders as expected 1`] = `
+<body>
+  <div>
+    <button
+      type="button"
+    >
+      Sign Out
+    </button>
+  </div>
+</body>
+`;
+
+exports[`SignOut render tests page renders as expected 1`] = `
+<body>
+  <div>
+    <h1>
+      You have successfully signed out
+    </h1>
+  </div>
+</body>
+`;

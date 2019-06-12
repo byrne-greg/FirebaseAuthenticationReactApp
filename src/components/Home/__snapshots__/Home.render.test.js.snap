@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home render tests when user is authenticated, the home page renders as expected 1`] = `
+<body>
+  <div>
+    <div>
+      <h1>
+        Home Page
+      </h1>
+      <p>
+        The Home Page is accessible by every signed in user.
+      </p>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Home render tests when user is unauthenticated, the unauthorized page is rendered 1`] = `
+<body>
+  <div>
+    <div>
+      <h1>
+        You are not allowed to access this page
+      </h1>
+    </div>
+  </div>
+</body>
+`;

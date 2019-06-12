@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DeleteUser render tests delete user form renders as expected 1`] = `
+<body>
+  <div>
+    <h2>
+      Delete your account
+    </h2>
+    <form>
+      <label
+        id="confirm-delete-user-label"
+      >
+        Are you sure you want to delete your account?
+      </label>
+      <input
+        aria-labelledby="confirm-delete-user-label"
+        name="confirm-delete"
+        type="checkbox"
+        value="false"
+      />
+      <button
+        disabled=""
+        type="submit"
+      >
+        Delete account
+      </button>
+    </form>
+  </div>
+</body>
+`;
+
+exports[`DeleteUser render tests delete user form renders as expected 2`] = `
+<body>
+  <div>
+    <div>
+      <h1>
+        Account deleted
+      </h1>
+      <p>
+        You have successfully deleted your account
+      </p>
+    </div>
+  </div>
+</body>
+`;

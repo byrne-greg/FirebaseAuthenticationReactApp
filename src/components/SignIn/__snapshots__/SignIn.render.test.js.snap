@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignIn render tests page renders as expected 1`] = `
+<body>
+  <div>
+    <div>
+      <h1>
+        Sign In
+      </h1>
+      <form>
+        <label
+          id="email-label"
+        >
+          Email Address
+        </label>
+        <input
+          aria-labelledby="email-label"
+          id="email-input"
+          name="email"
+          placeholder="Email Address"
+          type="email"
+          value=""
+        />
+        <label
+          id="password-label"
+        >
+          Password
+        </label>
+        <input
+          aria-labelledby="password-label"
+          id="password-input"
+          name="password"
+          placeholder="Password"
+          type="password"
+          value=""
+        />
+        <button
+          disabled=""
+          type="submit"
+        >
+          Sign In
+        </button>
+      </form>
+      <p>
+        <a
+          href="/pw-forget"
+        >
+          Forgot Password?
+        </a>
+      </p>
+      <p>
+        Don't have an account? 
+        <a
+          href="/signup"
+        >
+          Sign Up
+        </a>
+      </p>
+    </div>
+  </div>
+</body>
+`;
