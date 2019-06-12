@@ -1,4 +1,5 @@
 # Firebase Authentication React App
+https://fir-authenticationreactapp.web.app/
 
 ## What is this?
 
@@ -6,16 +7,19 @@ This is a template repository for creating a React app connected to a Firebase s
 
 The boilerplate code contains generic (unstyled!) pages for the CRUD operations needed to use the authentication Firebase service.
 
+Caveat; this isn't a production-grade database service. Please don't add any personal credentials when signing up (like your proper email address!). Use dummy data.
+
 ## What does it use?
 
 - Production
     - Firebase (the obvious one!)
     - Create-React-App (babel, webpack, etc.)
     - react-router
+    - React Hooks
+    - React Context API
 - Test
     - react-testing-library
     - jest (with CRA)
-
 
 ## Configuration
 
