@@ -21,11 +21,12 @@
     "test": "react-scripts test",
     "coverage": "npm test -- --env=jsdom --coverage",
     "eject": "react-scripts eject",
-    "firebase:init": "npm run firebase:logout && npm run firebase:login && firebase init",
+    "firebase:init": "npm run firebase:logout && npm run firebase:login && npm run firebase:init",
     "firebase:logout": "firebase logout",
     "firebase:login": "firebase login",
     "firebase:login:ci": "firebase login:ci",
-    "deploy": "npm run build && firebase deploy",
+    "firebase:deploy": "firebase deploy",
+    "deploy": "npm run build && npm run firebase:deploy",
     "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls"
   },
   "eslintConfig": {
