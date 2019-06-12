@@ -1,8 +1,8 @@
 import React, { useState, useContext } from "react";
 import { withRouter } from "react-router-dom";
 import text from "./text";
-import { AuthUserContext } from "../Session";
 import Routes from "../../constants/Routes";
+import { FirebaseContext } from "../Firebase";
 
 const DeleteUserSuccessfulPage = () => (
   <div>
@@ -20,7 +20,7 @@ const ErrorAlert = ({ errorText }) => (
 const DeleteUserFormComponent = ({ history }) => {
   const [isDeletionConfirmed, setIsDeletionConfirmed] = useState(false);
   const [error, setError] = useState(null);
-  const authUser = useContext(AuthUserContext);
+  const firebase = useContext(FirebaseContext);
 
   const handleChange = event => {
     setIsDeletionConfirmed(event.target.checked);
@@ -28,7 +28,7 @@ const DeleteUserFormComponent = ({ history }) => {
   const handleSubmit = async event => {
     event.preventDefault();
     try {
-      await authUser.delete();
+      await firebase.deleteUser();
       history.push(Routes.DELETED_USER.url);
     } catch (error) {
       setError({ ...error });
@@ -49,11 +49,7 @@ const DeleteUserFormComponent = ({ history }) => {
           onChange={handleChange}
           value={isDeletionConfirmed}
         />
-        <button
-          id="submit-button"
-          disabled={!isDeletionConfirmed}
-          type="submit"
-        >
+        <button disabled={!isDeletionConfirmed} type="submit">
           {text.deleteAccount}
         </button>
         {error && <ErrorAlert errorText={error.message} />}
